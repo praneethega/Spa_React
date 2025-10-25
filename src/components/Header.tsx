@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FaBars, FaTimes, FaSpa } from 'react-icons/fa'
 
 interface HeaderProps {
@@ -19,18 +20,16 @@ const Header = ({ onBookNow }: HeaderProps) => {
     }, [])
 
     const navItems = [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Services', href: '#services' },
-        { name: 'Testimonials', href: '#testimonials' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Home', href: '/home' },
+        { name: 'About', href: '/about' },
+        { name: 'Contact', href: '/contact' },
     ]
 
     return (
         <motion.header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-yellow-500/20' : 'bg-transparent'
                 }`}
         >
             <div className="container-custom">
@@ -40,35 +39,35 @@ const Header = ({ onBookNow }: HeaderProps) => {
                         whileHover={{ scale: 1.05 }}
                         className="flex items-center space-x-2"
                     >
-                        <FaSpa className="text-3xl text-purple-600" />
-                        <span className="text-2xl font-bold text-gray-800">Platinum Spa</span>
+                        <FaSpa className="text-3xl text-yellow-500" />
+                        <span className="text-2xl font-bold text-white font-luxury">Platinum Spa</span>
                     </motion.div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <a
+                            <Link
                                 key={item.name}
-                                href={item.href}
-                                className="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium"
+                                to={item.href}
+                                className="text-gray-300 hover:text-yellow-500 transition-colors duration-300 font-medium font-elegant"
                             >
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={onBookNow}
-                            className="btn-primary"
+                            className="bg-yellow-600 text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-300"
                         >
-                            Book Now
+                            Schedule Now
                         </motion.button>
                     </nav>
 
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 text-gray-700 hover:text-purple-600 transition-colors"
+                        className="md:hidden p-2 text-gray-300 hover:text-yellow-500 transition-colors"
                     >
                         {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
@@ -80,27 +79,27 @@ const Header = ({ onBookNow }: HeaderProps) => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t border-gray-200"
+                        className="md:hidden border-t border-yellow-500/20"
                     >
                         <div className="py-4 space-y-4">
                             {navItems.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
-                                    href={item.href}
-                                    className="block text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium"
+                                    to={item.href}
+                                    className="block text-gray-300 hover:text-yellow-500 transition-colors duration-300 font-medium"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                             <button
                                 onClick={() => {
                                     onBookNow()
                                     setIsMenuOpen(false)
                                 }}
-                                className="btn-primary w-full"
+                                className="bg-yellow-600 text-black w-full px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-300"
                             >
-                                Book Now
+                                Schedule Now
                             </button>
                         </div>
                     </motion.nav>

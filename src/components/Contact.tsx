@@ -56,16 +56,16 @@ const Contact = () => {
     ]
 
     const services = [
-        'Swedish Massage',
-        'Deep Tissue Massage',
-        'Aromatherapy',
-        'Hot Stone Therapy',
-        'Reflexology',
-        'Premium Package'
+        'Swedish Therapeutic Massage',
+        'Deep Tissue Therapeutic Treatment',
+        'Essential Oil Aromatherapy',
+        'Thermal Stone Therapy',
+        'Foot Reflexology Treatment',
+        'Wellness Signature Package'
     ]
 
     return (
-        <section id="contact" className="section-padding bg-white">
+        <section id="contact" className="section-padding bg-gray-900">
             <div className="container-custom">
                 {/* Section Header */}
                 <motion.div
@@ -75,15 +75,15 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury">
                         Get In
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
                             Touch
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Ready to experience the ultimate in relaxation? Contact us today to book
-                        your appointment or ask any questions about our services.
+                    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-elegant">
+                        Ready to experience professional wellness treatments? Contact us today to schedule
+                        your appointment or learn more about our therapeutic services.
                     </p>
                 </motion.div>
 
@@ -95,7 +95,7 @@ const Contact = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-2xl font-bold text-gray-800 mb-8">
+                        <h3 className="text-2xl font-bold text-white mb-8">
                             Contact Information
                         </h3>
 
@@ -113,10 +113,10 @@ const Contact = () => {
                                         {info.icon}
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800 mb-1">
+                                        <h4 className="font-semibold text-white mb-1">
                                             {info.title}
                                         </h4>
-                                        <p className="text-gray-600">
+                                        <p className="text-gray-300">
                                             {info.details}
                                         </p>
                                     </div>
@@ -126,7 +126,7 @@ const Contact = () => {
 
                         {/* Social Media */}
                         <div className="mt-8">
-                            <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                            <h4 className="text-lg font-semibold text-white mb-4">
                                 Follow Us
                             </h4>
                             <div className="flex space-x-4">
@@ -139,7 +139,7 @@ const Contact = () => {
                                         key={index}
                                         whileHover={{ scale: 1.1, y: -2 }}
                                         href={social.href}
-                                        className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                                        className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-600 hover:text-white transition-all duration-300"
                                         aria-label={social.label}
                                     >
                                         {social.icon}
@@ -148,13 +148,18 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Map Placeholder */}
+                        {/* Luxury Lobby Image */}
                         <div className="mt-8">
-                            <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center">
-                                <div className="text-center text-gray-500">
-                                    <FaMapMarkerAlt className="text-4xl mx-auto mb-2" />
-                                    <p>Interactive Map</p>
-                                    <p className="text-sm">123 Luxury Lane, Wellness District</p>
+                            <div className="relative rounded-lg overflow-hidden shadow-lg">
+                                <img
+                                    src="/images/3.jpeg"
+                                    alt="Luxury Spa Lobby"
+                                    className="w-full h-48 object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute bottom-4 left-4 text-white">
+                                    <h4 className="font-semibold text-lg">Visit Our Luxury Spa</h4>
+                                    <p className="text-sm text-gray-200">Experience our elegant reception area</p>
                                 </div>
                             </div>
                         </div>
@@ -166,16 +171,16 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="bg-gray-50 rounded-2xl p-8"
+                        className="bg-gray-800 rounded-2xl p-8 border border-yellow-500/20"
                     >
-                        <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                             Send Us a Message
                         </h3>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                                         Full Name *
                                     </label>
                                     <input
@@ -185,13 +190,13 @@ const Contact = () => {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
                                         placeholder="Your full name"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                                         Email Address *
                                     </label>
                                     <input
@@ -201,7 +206,7 @@ const Contact = () => {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
                                         placeholder="your@email.com"
                                     />
                                 </div>
@@ -209,7 +214,7 @@ const Contact = () => {
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
-                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                                         Phone Number
                                     </label>
                                     <input
@@ -218,13 +223,13 @@ const Contact = () => {
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleInputChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
                                         placeholder="(555) 123-4567"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
                                         Service Interest
                                     </label>
                                     <select
@@ -232,7 +237,7 @@ const Contact = () => {
                                         name="service"
                                         value={formData.service}
                                         onChange={handleInputChange}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-gray-700 text-white"
                                     >
                                         <option value="">Select a service</option>
                                         {services.map((service, index) => (
@@ -245,7 +250,7 @@ const Contact = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                                     Message *
                                 </label>
                                 <textarea
@@ -255,8 +260,8 @@ const Contact = () => {
                                     onChange={handleInputChange}
                                     required
                                     rows={4}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
-                                    placeholder="Tell us about your needs or ask any questions..."
+                                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none bg-gray-700 text-white"
+                                    placeholder="Tell us about your wellness goals or ask any questions..."
                                 />
                             </div>
 
@@ -266,7 +271,7 @@ const Contact = () => {
                                 type="submit"
                                 className="w-full btn-primary py-4 text-lg"
                             >
-                                Send Message
+                                Send Inquiry
                             </motion.button>
                         </form>
                     </motion.div>

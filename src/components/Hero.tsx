@@ -10,8 +10,8 @@ const Hero = ({ onBookNow }: HeroProps) => {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-pink-900/80"></div>
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-yellow-900/60"></div>
+                <div className="w-full h-full bg-[url('/images/1.jpeg')] bg-cover bg-center bg-no-repeat"></div>
             </div>
 
             {/* Content */}
@@ -26,10 +26,10 @@ const Hero = ({ onBookNow }: HeroProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                        className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-luxury"
                     >
                         Experience Luxury
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
                             & Tranquility
                         </span>
                     </motion.h1>
@@ -38,11 +38,11 @@ const Hero = ({ onBookNow }: HeroProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed"
+                        className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed font-elegant"
                     >
-                        Discover the ultimate spa experience where luxury meets wellness.
-                        Our expert therapists provide personalized treatments to rejuvenate
-                        your body, mind, and soul.
+                        Experience premium wellness treatments in a serene, professional environment.
+                        Our certified therapists provide therapeutic services designed to promote
+                        relaxation, stress relief, and overall well-being.
                     </motion.p>
 
                     <motion.div
@@ -57,7 +57,7 @@ const Hero = ({ onBookNow }: HeroProps) => {
                             onClick={onBookNow}
                             className="btn-primary text-lg px-8 py-4"
                         >
-                            Book Your Session
+                            Schedule Appointment
                         </motion.button>
                     </motion.div>
 
@@ -74,7 +74,7 @@ const Hero = ({ onBookNow }: HeroProps) => {
                             { number: '15+', label: 'Years Experience' },
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">
+                                <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">
                                     {stat.number}
                                 </div>
                                 <div className="text-gray-300 text-sm md:text-base">
