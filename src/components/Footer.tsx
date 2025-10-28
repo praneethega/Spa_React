@@ -62,10 +62,19 @@ const Footer = () => {
                         </p>
 
                         <div className="space-y-3">
-                            <div className="flex items-center space-x-3 text-gray-300">
-                                <FaMapMarkerAlt className="text-purple-400" />
-                                <span>Pillar No: 1734, KSR Towers, Madhapur, Hyderabad, 500081</span>
-                            </div>
+                            <a
+  href="https://maps.app.goo.gl/9w88PmDBXQabQkKX8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-start space-x-3 text-gray-300 hover:text-yellow-400 transition-colors duration-200"
+  aria-label="Open location in Google Maps"
+>
+  <FaMapMarkerAlt className="text-yellow-500 text-lg mt-1 flex-shrink-0" />
+  <span className="font-medium">
+    4th Floor, Pillar No: 1731, KSR Towers, Hitech City Rd, Phase 2, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081
+  </span>
+</a>
+
                             <div className="flex items-center space-x-3 text-gray-300">
                                 <FaPhone className="text-purple-400" />
                                 <span>+91 91 212 899 18</span>

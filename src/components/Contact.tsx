@@ -33,11 +33,25 @@ const Contact = () => {
     }
 
     const contactInfo = [
-        {
-            icon: <FaMapMarkerAlt className="text-2xl text-purple-600" />,
-            title: 'Visit Us',
-            details: 'Pillar No: 1734, KSR Towers, Madhapur, Hyderabad, 500081'
-        },
+       {
+    icon: (
+        <a
+            href="https://maps.app.goo.gl/9w88PmDBXQabQkKX8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start space-x-3 hover:text-purple-700 transition-colors duration-200"
+            aria-label="Open location in Google Maps"
+        >
+            <FaMapMarkerAlt className="text-2xl text-purple-600 flex-shrink-0" />
+            <div>
+                <h3 className="font-semibold text-lg">Visit Us</h3>
+                <p className="text-gray-600">
+                    Pillar No: 1731, 4th Floor, KSR Towers, Madhapur, Hyderabad, 500081
+                </p>
+            </div>
+        </a>
+    )
+},
         {
             icon: <FaPhone className="text-2xl text-purple-600" />,
             title: 'Call Us',
